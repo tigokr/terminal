@@ -144,3 +144,32 @@ Stack trace:
 [12-Feb-2015 16:02:44 Europe/Berlin] PHP Notice:  Undefined variable: title_2 in C:\terminal\www\index.php on line 657
 [12-Feb-2015 16:02:44 Europe/Berlin] PHP Notice:  Undefined variable: title_3 in C:\terminal\www\index.php on line 661
 [12-Feb-2015 16:02:45 Europe/Berlin] PHP Notice:  Undefined variable: title_4 in C:\terminal\www\index.php on line 663
+[14-Apr-2015 21:53:15 Europe/Moscow] PHP Fatal error:  Uncaught exception 'MongoWriteConcernException' with message 'localhost:27017: exception: interrupted at shutdown' in F:\dev\terminal\www\install\import_counts.php:50
+Stack trace:
+#0 F:\dev\terminal\www\install\import_counts.php(50): MongoCollection->update(Array, Array)
+#1 {main}
+  thrown in F:\dev\terminal\www\install\import_counts.php on line 50
+[14-Apr-2015 21:53:17 Europe/Moscow] PHP Fatal error:  Uncaught exception 'MongoConnectionException' with message 'Failed to connect to: localhost:27017: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+' in F:\dev\terminal\www\install\import_items_photos.php:4
+Stack trace:
+#0 F:\dev\terminal\www\install\import_items_photos.php(4): MongoClient->__construct()
+#1 {main}
+  thrown in F:\dev\terminal\www\install\import_items_photos.php on line 4
+[14-Apr-2015 21:53:20 Europe/Moscow] PHP Fatal error:  Uncaught exception 'MongoConnectionException' with message 'Failed to connect to: localhost:27017: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+' in F:\dev\terminal\www\install\import_desc.php:4
+Stack trace:
+#0 F:\dev\terminal\www\install\import_desc.php(4): MongoClient->__construct()
+#1 {main}
+  thrown in F:\dev\terminal\www\install\import_desc.php on line 4
+[14-Apr-2015 21:53:22 Europe/Moscow] PHP Fatal error:  Uncaught exception 'MongoConnectionException' with message 'Failed to connect to: localhost:27017: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+' in F:\dev\terminal\www\install\import_counts.php:4
+Stack trace:
+#0 F:\dev\terminal\www\install\import_counts.php(4): MongoClient->__construct()
+#1 {main}
+  thrown in F:\dev\terminal\www\install\import_counts.php on line 4
+[14-Apr-2015 21:53:22 Europe/Moscow] PHP Fatal error:  Uncaught exception 'MongoConnectionException' with message 'Failed to connect to: localhost:27017: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+' in F:\dev\terminal\www\install\import_items.php:4
+Stack trace:
+#0 F:\dev\terminal\www\install\import_items.php(4): MongoClient->__construct()
+#1 {main}
+  thrown in F:\dev\terminal\www\install\import_items.php on line 4

@@ -1,17 +1,28 @@
-start /min c:\terminal\metrokiller.exe
+@echo off
+
+@setlocal
+
+set TERM_PATH=%~dp0
+set WWW_PATH=%TERM_PATH%www
+set PHP_COMMAND=xampp\php\php.exe
+set PHP_INI=xampp\php\php.ini
+
+start /min metrokiller.exe
 timeout /t 1
-c:\terminal\enter.vbs
+enter.vbs
 timeout /t 1
-c:\terminal\enter.vbs
+enter.vbs
 timeout /t 1
-start c:\terminal\run.bat
+start run.bat
 timeout /t 15
 
-c:\terminal\xampp\php\php.exe -c c:\terminal\xampp\php\php.ini c:\terminal\www\install\import.php
-c:\terminal\xampp\php\php.exe -c c:\terminal\xampp\php\php.ini c:\terminal\www\install\typesizes.php 
-c:\terminal\xampp\php\php.exe -c c:\terminal\xampp\php\php.ini c:\terminal\www\install\import_items.php
-c:\terminal\xampp\php\php.exe -c c:\terminal\xampp\php\php.ini c:\terminal\www\install\import_counts.php 
-c:\terminal\xampp\php\php.exe -c c:\terminal\xampp\php\php.ini c:\terminal\www\install\import_items_photos.php 
-c:\terminal\xampp\php\php.exe -c c:\terminal\xampp\php\php.ini c:\terminal\www\install\import_desc.php
+%PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import.php
+%PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\typesizes.php
+%PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import_items.php
+%PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import_counts.php
+%PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import_items_photos.php
+%PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import_desc.php
 
 shutdown -r
+
+@endlocal
