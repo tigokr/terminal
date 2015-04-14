@@ -1,0 +1,3 @@
+[submodule "terminal"]
+	path = www
+	url = ./www
