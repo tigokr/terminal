@@ -44,7 +44,7 @@ class Updater {
         $this->checkVersionLocal();
         $this->checkVersionRemote();
 
-        echo "Local version: ".$this->version_local;
+        echo "Local version: ".$this->version_local."\n";
         echo "Remote version: ".$this->version_remote."\n";
 
         if(self::confirm("Update?")) {
@@ -120,7 +120,10 @@ class Updater {
      */
     public function checkVersionLocal(){
         if(empty($this->version_local))
-            return $this->version_local = file_get_contents(ROOT.DS.$this->config['local']['version']);
+            if(file_exists(ROOT.DS.$this->config['local']['version']))
+                return $this->version_local = file_get_contents(ROOT.DS.$this->config['local']['version']);
+            else
+                return 'None.';
         else
             return $this->version_local;
     }
