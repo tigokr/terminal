@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Terminal console appilcation
+ *
+ */
+
+// fcgi doesn't have STDIN and STDOUT defined by default
+defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
+defined('STDOUT') or define('STDOUT', fopen('php://stdout', 'w'));
+
+require(__DIR__ . '/lib/func.php');
+require(__DIR__ . '/vendor/autoload.php');
+require(__DIR__ . '/lib/Updater.php');
+
+$config = parse_ini_file("config.ini", true);
+
+$application = new \lib\Updater($config);
+$exitCode = $application->run();
+
+exit($exitCode);
