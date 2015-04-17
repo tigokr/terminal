@@ -1,5 +1,3 @@
-@echo off
-
 @setlocal
 
 set TERM_PATH=%~dp0
@@ -14,7 +12,7 @@ timeout /t 1
 enter.vbs
 timeout /t 1
 start run.bat
-timeout /t 15
+timeout /t 5
 
 %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import_items.php
 %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import_counts.php
