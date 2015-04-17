@@ -5,7 +5,7 @@ set WWW_PATH=%TERM_PATH%www
 set PHP_COMMAND=xampp\php\php.exe
 set PHP_INI=xampp\php\php.ini
 
-rem start /min metrokiller.exe
+start /min metrokiller.exe
 timeout /t 1
 enter.vbs
 timeout /t 1
