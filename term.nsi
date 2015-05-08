@@ -2,13 +2,13 @@
 
 ; Define your application name
 !define APPNAME "Òåðìèíàë"
-!define APPNAMEANDVERSION "${APPNAME} 1.2.1"
+!define APPNAMEANDVERSION "${APPNAME} 1.2.2"
 
 ; Main Install settings
 Name "${APPNAMEANDVERSION}"
 InstallDir "C:\terminal"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-OutFile "terminst_v1.2.1.exe"
+OutFile "terminst_v1.2.exe"
 
 
 ; Modern interface settings
@@ -40,9 +40,14 @@ Section "Òåðìèíàë 4tochki.ru" Section1
 	SetOverwrite on
 	RMDir /r "$INSTDIR"
 
-	File /r "c:\app\*"
+	File /r /x ".git" /x ".idea" /x "tmp" \
+		/x www\images\*.* /x www\install\*.xml /x "*.pdf" \
+		/x "terminst*.*" /x ".git*" /x "mongo*.pdb" \
+		/x xampp\mongodb\db\*.* \
+		/x xampp\apache\include /x xampp\apache\logs /x Thumbs.db \
+		e:\*
 	
-	WriteUninstaller "$INSTDIR\uninstall.exe"
+	WriteUninstaller "$INSTDIR\uninstall.exe"  
 
 SectionEnd
 

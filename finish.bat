@@ -9,7 +9,7 @@ set WWW_PATH=%TERM_PATH%www
 set PHP_COMMAND=xampp\php\php.exe
 set PHP_INI=xampp\php\php.ini
 
-start /min metrokiller.exe
+start /min %TERM_PATH%\metrokiller.exe
 timeout /t 1
 enter.vbs
 timeout /t 1
@@ -18,7 +18,7 @@ timeout /t 1
 start run.bat
 timeout /t 15
 
-start %WWW_PATH%\tasks.bat
+start tasks.bat
 
 %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import.php
 %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\typesizes.php
