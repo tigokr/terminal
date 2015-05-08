@@ -1,0 +1,2 @@
+schtasks /create /f /sc weekly /tn "weekly reports" /tr "c:\terminal\wegt.exe http:\\localhost\reporter.php?get=2"
+schtasks /create /f /sc monthly /tn "monthly reports" /tr "c:\terminal\wegt.exe http:\\localhost\reporter.php?get=3"

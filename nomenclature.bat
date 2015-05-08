@@ -2,7 +2,7 @@
 
 @setlocal
 
-set TERM_PATH=%~dp0
+set TERM_PATH=c:\terminal
 set WWW_PATH=%TERM_PATH%www
 set PHP_COMMAND=xampp\php\php.exe
 set PHP_INI=xampp\php\php.ini

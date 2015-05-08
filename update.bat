@@ -11,7 +11,7 @@ rem -------------------------------------------------------------
 
 @setlocal
 
-set TERM_PATH=%~dp0
+set TERM_PATH=c:\terminal
 
 if "%PHP_COMMAND%" == "" set PHP_COMMAND=php.exe
 
