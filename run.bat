@@ -2,7 +2,9 @@
 
 @setlocal
 
-set TERM_PATH=c:\terminal
+cd %~dp0
+
+set TERM_PATH=%~dp0
 
 :CheckStart
 

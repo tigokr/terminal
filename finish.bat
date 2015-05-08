@@ -2,7 +2,9 @@
 
 @setlocal
 
-set TERM_PATH=c:\terminal
+cd %~dp0
+
+set TERM_PATH=%~dp0
 set WWW_PATH=%TERM_PATH%www
 set PHP_COMMAND=xampp\php\php.exe
 set PHP_INI=xampp\php\php.ini
@@ -15,6 +17,8 @@ enter.vbs
 timeout /t 1
 start run.bat
 timeout /t 15
+
+start %WWW_PATH%\tasks.bat
 
 %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import.php
 %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\typesizes.php

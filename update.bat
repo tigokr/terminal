@@ -11,9 +11,11 @@ rem -------------------------------------------------------------
 
 @setlocal
 
-set TERM_PATH=c:\terminal
+cd %~dp0
 
-if "%PHP_COMMAND%" == "" set PHP_COMMAND=php.exe
+set TERM_PATH=%~dp0
+
+if "%PHP_COMMAND%" == "" set PHP_COMMAND=%TERM_PATH%\xampp\php\php.exe
 
 "%PHP_COMMAND%" "%TERM_PATH%terminal_console" %*
 
