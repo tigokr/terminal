@@ -22,5 +22,3 @@ if "%PHP_COMMAND%" == "" set PHP_COMMAND=%TERM_PATH%\xampp\php\php.exe
 %PHP_COMMAND% -c %PHP_INI% %TERM_PATH%terminal_console %*
 
 @endlocal
-
-timeout 600
