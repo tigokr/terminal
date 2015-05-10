@@ -10,7 +10,7 @@
 Name "${APPNAMEANDVERSION}"
 InstallDir "C:\terminal"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-OutFile "terminst_v${VERSION}.exe"
+OutFile "terminst_v${VERSION}_full.exe"
 
 
 
