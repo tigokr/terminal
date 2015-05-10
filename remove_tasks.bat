@@ -17,6 +17,7 @@ schtasks /delete /f /tn "Terminal update by car selection"
 schtasks /delete /f /tn "Terminal update nomenclature"
 schtasks /delete /f /tn "Terminal update goods photos"
 schtasks /delete /f /tn "Terminal update goods descriptions"
+schtasks /delete /f /tn "Terminal update www"
 
 schtasks /delete /f /tn "Terminal kill metrointerface"
 schtasks /delete /f /tn "Terminal browser"
