@@ -7,7 +7,7 @@ set WWW_PATH=%TERM_PATH%www
 set PHP_COMMAND=%TERM_PATH%xampp\php\php.exe
 set PHP_INI=%TERM_PATH%xampp\php\console.ini
 
-NetSh Advfirewall set allprofiles state off
+rem NetSh Advfirewall set allprofiles state off
 
 start %TERM_PATH%lib\metrokiller.exe /s
 
