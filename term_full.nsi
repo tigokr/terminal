@@ -86,6 +86,7 @@ Section "Uninstall"
 	;DeleteRegValue HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Run" "terminal"
     ExecShell "" "$INSTDIR\remove_tasks.bat"
 	RMDir /r /REBOOTOK "$INSTDIR"
+	ExecShell "" "shutdown -r"
 SectionEnd
 
 BrandingText "4tochki.ru"
