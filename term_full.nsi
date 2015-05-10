@@ -8,7 +8,7 @@
 Name "${APPNAMEANDVERSION}"
 InstallDir "C:\terminal"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-OutFile "terminst_v1.2.3.exe"
+OutFile "terminst_v1.2.3_full.exe"
 
 
 
@@ -57,9 +57,8 @@ Section "Терминал 4tochki.ru" Section1
 
     SetOutPath "$INSTDIR\www"
     File /r /x .git /x .idea /x tmp /x .git* /x *.log /x *.pdf \
-        /x images /x install \
+        /x install \
     f:\dev\terminal\www\*
-    CreateDirectory "$INSTDIR\www\images"
     CreateDirectory "$INSTDIR\tmp"
 
     SetOutPath "$INSTDIR\www\install"
@@ -87,7 +86,6 @@ Section "Uninstall"
 	;DeleteRegValue HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Run" "terminal"
     ExecShell "" "$INSTDIR\remove_tasks.bat"
 	RMDir /r /REBOOTOK "$INSTDIR"
-	ExecShell "" "shutdown -r"
 SectionEnd
 
 BrandingText "4tochki.ru"

@@ -3,4 +3,11 @@
 /tmp
 /config.ini
 /test.php
-/xampp
+/xampp/mongodb/db/*
+/xampp/apache/logs/*
+/xampp/tmp/*
+/xampp/php/logs/*
+/xampp/php/tmp/*
+sd.bat
+/www/phpi.php
+terminst*
