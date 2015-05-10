@@ -47,7 +47,7 @@ class Updater {
         echo "Local version: ".$this->version_local."\n";
         echo "Remote version: ".$this->version_remote."\n";
 
-        if(version_compare($this->version_remote, $this->version_local)>1) {
+        if(version_compare($this->version_remote, $this->version_local)>0) {
             echo "...\n";
             $res = $this->update();
             echo $res==self::EXIT_NO_ERROR?"Done!\n":"";
