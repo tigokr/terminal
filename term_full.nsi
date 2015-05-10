@@ -2,13 +2,15 @@
 
 ; Define your application name
 !define APPNAME "Терминал"
-!define APPNAMEANDVERSION "${APPNAME} 1.2.3"
+!define VERSION "1.2.4"
+!define APPNAMEANDVERSION "${APPNAME} ${VERSION}"
+
 
 ; Main Install settings
 Name "${APPNAMEANDVERSION}"
 InstallDir "C:\terminal"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-OutFile "terminst_v1.2.3_full.exe"
+OutFile "terminst_v${VERSION}.exe"
 
 
 
