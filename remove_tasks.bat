@@ -21,5 +21,6 @@ schtasks /delete /f /tn "Terminal update www"
 
 schtasks /delete /f /tn "Terminal kill metrointerface"
 schtasks /delete /f /tn "Terminal browser"
+schtasks /delete /f /tn "Terminal browser check n run"
 
 timeout /t 30
