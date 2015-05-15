@@ -18,5 +18,6 @@ schtasks /create /tn "Terminal update www" /f /sc WEEKLY /d sun /st 00:01 /tr "%
 
 schtasks /create /tn "Terminal kill metrointerface" /f /sc ONSTART /delay 0001:00 /tr "%TERM_PATH%lib\metrokiller.exe /s"
 schtasks /create /tn "Terminal browser" /f /sc ONSTART /delay 0001:05 /tr "%TERM_PATH%lib\WpfWbApp.exe"
+schtasks /create /tn "Terminal browser check n run" /f /sc MINUTE /mo 5 /tr "%TERM_PATHrun.bat%"
 
 exit
