@@ -16,8 +16,8 @@ schtasks /create /tn "Terminal update goods photos" /f /sc WEEKLY /d sun /st 05:
 schtasks /create /tn "Terminal update goods descriptions" /f /sc WEEKLY /d sun /st 05:30 /tr "%PHP_COMMAND% -c %PHP_INI% %WWW_PATH%\install\import_desc.php"
 schtasks /create /tn "Terminal update www" /f /sc WEEKLY /d sun /st 00:01 /tr "%TERM_PATH%update.bat"
 
-schtasks /create /tn "Terminal kill metrointerface" /f /sc ONSTART /delay 0000:05 /tr "%TERM_PATH%lib\metrokiller.exe /s"
-schtasks /create /tn "Terminal browser" /f /sc ONSTART /delay 0000:15 /tr "%TERM_PATH%lib\WpfWbApp.exe"
+schtasks /create /tn "Terminal kill metrointerface" /f /sc ONLOGON /delay 0000:05 /tr "%TERM_PATH%lib\metrokiller.exe /s"
+schtasks /create /tn "Terminal browser" /f /sc ONLOGON /delay 0000:05 /tr "%TERM_PATH%lib\WpfWbApp.exe"
 schtasks /create /tn "Terminal browser check n run" /f /sc MINUTE /mo 5 /tr "%TERM_PATH%run.bat"
 
 exit
