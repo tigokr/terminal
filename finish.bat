@@ -9,6 +9,9 @@ set PHP_INI=%TERM_PATH%xampp\php\console.ini
 
 rem NetSh Advfirewall set allprofiles state off
 
+REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /t REG_SZ /d 1 /f
+REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultUserName /t REG_SZ /d terminal /f
+
 start %TERM_PATH%lib\metrokiller.exe /s
 
 %TERM_PATH%xampp\mongodb\bin\mongod.exe --journal --dbpath %TERM_PATH%xampp\mongodb\db --logpath %TERM_PATH%xampp\mongodb\db\mongo.log --install --serviceName "mongo" --serviceDisplayName "mongo"
