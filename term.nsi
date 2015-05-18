@@ -46,7 +46,8 @@ ${EndIf}
 FunctionEnd
 
 Section "Òåðìèíàë 4tochki.ru" Section1
-    ;WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Run" "terminal" "$INSTDIR\init.bat"
+    ;WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows NT\CurrentVersion\Winlogon" "AutoAdminLogon" "1"
+    ;WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows NT\CurrentVersion\Winlogon" "DefaultUserName" "terminal"
 
     ; Set Section properties
     SetOverwrite on
@@ -86,7 +87,8 @@ Section "Òåðìèíàë 4tochki.ru" Section1
 SectionEnd
 
 Section "Uninstall"
-	;DeleteRegValue HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Run" "terminal"
+    ;DeleteRegValue HKEY_LOCAL_MACHINE "Software\Microsoft\Windows NT\CurrentVersion\Winlogon" "AutoAdminLogon"
+    ;DeleteRegValue HKEY_LOCAL_MACHINE "Software\Microsoft\Windows NT\CurrentVersion\Winlogon" "DefaultUserName"
     ExecShell "" "$INSTDIR\remove_tasks.bat"
 	RMDir /r /REBOOTOK "$INSTDIR"
 	ExecShell "" "shutdown -r"

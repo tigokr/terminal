@@ -8,6 +8,9 @@ net stop httpd
 %TERM_PATH%xampp\apache\bin\httpd.exe -k uninstall
 %TERM_PATH%xampp\mongodb\bin\mongod.exe --remove
 
+REG DELETE "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /f
+REG DELETE "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultUserName /f
+
 schtasks /delete /f /tn "Terminal 2w report"
 schtasks /delete /f /tn "Terminal 1m report"
 schtasks /delete /f /tn "Terminal alltime report"
