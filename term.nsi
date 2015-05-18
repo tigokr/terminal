@@ -2,7 +2,7 @@
 
 ; Define your application name
 !define APPNAME "Терминал"
-!define VERSION "1.2.8"
+!define VERSION "1.2.9"
 !define APPNAMEANDVERSION "${APPNAME} ${VERSION}"
 
 
