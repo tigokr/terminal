@@ -2,7 +2,7 @@
 
 ; Define your application name
 !define APPNAME "Òåðìèíàë"
-!define VERSION "1.2.9"
+!define VERSION "1.3.1"
 !define APPNAMEANDVERSION "${APPNAME} ${VERSION}"
 
 
@@ -56,30 +56,30 @@ Section "Òåðìèíàë 4tochki.ru" Section1
     SetOutPath "$INSTDIR"
     File /r /x .git /x .idea /x tmp /x .git* /x *.pdf \
         /x www /x xampp /x terminst* \
-    f:\dev\terminal\*
+    e:\dev\terminal\*
 
     SetOutPath "$INSTDIR\www"
     File /r /x .git /x .idea /x tmp /x .git* /x *.log /x *.pdf \
         /x images /x install \
-    f:\dev\terminal\www\*
+    e:\dev\terminal\www\*
     CreateDirectory "$INSTDIR\www\images"
     CreateDirectory "$INSTDIR\tmp"
 
     SetOutPath "$INSTDIR\www\install"
     File /r /x .git /x .idea /x tmp /x .git* \
         /x *.xml \
-    f:\dev\terminal\www\install\*
+    e:\dev\terminal\www\install\*
 
     SetOutPath "$INSTDIR\xampp"
     File /r /x .git /x .idea /x tmp /x .git* /x *.log /x *.pdf \
         /x tmp /x mongodb \
-        f:\dev\terminal\xampp\*
+    e:\dev\terminal\xampp\*
     CreateDirectory "$INSTDIR\xampp\tmp"
 
     SetOutPath "$INSTDIR\xampp\mongodb"
     File /r /x .git /x .idea /x tmp /x .git* /x *.log /x *.pdf \
         /x db /x *.pdb \
-        f:\dev\terminal\xampp\mongodb\*
+    e:\dev\terminal\xampp\mongodb\*
     CreateDirectory "$INSTDIR\xampp\mongodb\db"
 
     WriteUninstaller "$INSTDIR\uninstall.exe"
