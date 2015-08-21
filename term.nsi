@@ -2,7 +2,7 @@
 
 ; Define your application name
 !define APPNAME "Òåðìèíàë"
-!define VERSION "1.3.4"
+!define VERSION "2.0a"
 !define APPNAMEANDVERSION "${APPNAME} ${VERSION}"
 
 
@@ -54,20 +54,17 @@ Section "Òåðìèíàë 4tochki.ru" Section1
     RMDir /r "$INSTDIR"
 
     SetOutPath "$INSTDIR"
-    File /r /x .git /x .idea /x tmp /x .git* /x *.pdf \
+    File /r /x .git /x .idea /x tmp /x .git* /x *.pdf /x test.php \
         /x www /x xampp /x terminst* \
     e:\dev\terminal\*
 
     SetOutPath "$INSTDIR\www"
     File /r /x .git /x .idea /x tmp /x .git* /x *.log /x *.pdf \
-        /x images /x install \
     e:\dev\terminal\www\*
-    CreateDirectory "$INSTDIR\www\images"
     CreateDirectory "$INSTDIR\tmp"
 
     SetOutPath "$INSTDIR\www\install"
-    File /r /x .git /x .idea /x tmp /x .git* \
-        /x *.xml \
+    File /r /x .git /x .idea /x tmp /x .git* /x *.xml \
     e:\dev\terminal\www\install\*
 
     SetOutPath "$INSTDIR\xampp"

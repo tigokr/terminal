@@ -22,6 +22,9 @@ net start httpd
 
 start %TERM_PATH%lib\WpfWbApp.exe
 
+rem %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\composer.phar -q self-update
+rem %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\composer.phar -q update
+
 %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import.php
 %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\typesizes.php
 %PHP_COMMAND% -c "%PHP_INI%" %WWW_PATH%\install\import_items.php
