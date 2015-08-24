@@ -56,27 +56,27 @@ Section "Терминал 4tochki.ru" Section1
     SetOutPath "$INSTDIR"
     File /r /x .git /x .idea /x tmp /x .git* /x *.pdf /x test.php \
         /x www /x xampp /x terminst* \
-    e:\dev\terminal\*
+    e:\dev\terminal2\*
 
     SetOutPath "$INSTDIR\www"
     File /r /x .git /x .idea /x tmp /x .git* /x *.log /x *.pdf \
-    e:\dev\terminal\www\*
+    e:\dev\terminal2\www\*
     CreateDirectory "$INSTDIR\tmp"
 
     SetOutPath "$INSTDIR\www\install"
     File /r /x .git /x .idea /x tmp /x .git* /x *.xml \
-    e:\dev\terminal\www\install\*
+    e:\dev\terminal2\www\install\*
 
     SetOutPath "$INSTDIR\xampp"
     File /r /x .git /x .idea /x tmp /x .git* /x *.log /x *.pdf \
         /x tmp /x mongodb \
-    e:\dev\terminal\xampp\*
+    e:\dev\terminal2\xampp\*
     CreateDirectory "$INSTDIR\xampp\tmp"
 
     SetOutPath "$INSTDIR\xampp\mongodb"
     File /r /x .git /x .idea /x tmp /x .git* /x *.log /x *.pdf \
         /x db /x *.pdb \
-    e:\dev\terminal\xampp\mongodb\*
+    e:\dev\terminal2\xampp\mongodb\*
     CreateDirectory "$INSTDIR\xampp\mongodb\db"
 
     WriteUninstaller "$INSTDIR\uninstall.exe"
