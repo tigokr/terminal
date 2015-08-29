@@ -49,6 +49,7 @@ class Updater {
 
         if(version_compare($this->version_remote, $this->version_local)>0) {
             echo "...\n";
+            $this->cleanup();
             $res = $this->update();
             echo $res==self::EXIT_NO_ERROR?"Done!\n":"";
             return $res;
@@ -89,10 +90,6 @@ class Updater {
         }
 
         self::copyr($source, $this->config['local']['dest']);
-
-        /*
-         * TODO: cleanup tmp dir
-         */
 
         return self::EXIT_NO_ERROR;
     }
@@ -252,6 +249,34 @@ class Updater {
         // Clean up
         $dir->close();
         return true;
+    }
+
+    public static function deleter($dir) {
+    if (!file_exists($dir)) {
+        return true;
+    }
+
+    if (!is_dir($dir)) {
+        return unlink($dir);
+    }
+
+    foreach (scandir($dir) as $item) {
+        if ($item == '.' || $item == '..') {
+            continue;
+        }
+
+        if (!self::deleter($dir . DIRECTORY_SEPARATOR . $item)) {
+            return false;
+        }
+    }
+
+    return rmdir($dir);
+}
+
+    private function cleanup()
+    {
+        self::deleter('tmp/remote');
+        @unlink('tmp/latest.zip');
     }
 
 }
